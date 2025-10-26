@@ -18,7 +18,7 @@ export default defineConfig({
   // FIX: For the 'push' command to work with long connection strings, 
   // we must provide the URL directly as the 'url' property, NOT inside 
   // the dbCredentials object (which expects host/port/database).
-  url: process.env.DATABASE_URL!, 
+  connectionString: process.env.DATABASE_URL!, 
   
   // We can remove the entire dbCredentials block now that we are using 'url'.
   

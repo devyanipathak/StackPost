@@ -119,7 +119,7 @@ export default async function Home({ searchParams }: HomeProps) {
                 "dark:from-blue-500 dark:to-blue-400 dark:text-slate-900 dark:ring-blue-400/40",
               ].join(" ")}
             >
-              <span className="whitespace-nowrap">Go to Admin Dashboard</span>
+              <span className="whitespace-nowrap">Admin Dashboard</span>
 
               {/* arrow icon that slides when hovered */}
               <span

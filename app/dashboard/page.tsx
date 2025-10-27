@@ -498,8 +498,7 @@ function DashboardInner() {
                     {postsForDashboard.map((post) => (
                       <Card
                         key={post.id}
-                        className="relative group hover:shadow-md transition-shadow"
-                      >
+                        className="relative hover:shadow-md transition-shadow">        
                         <CardContent className="p-4">
                           <div className="flex justify-between items-start mb-2">
                             <div className="pr-8">
@@ -511,7 +510,7 @@ function DashboardInner() {
                               </p>
                             </div>
 
-                            <div className="flex gap-1 opacity-0 group-hover:opacity-100 transition-opacity">
+                            <div className="flex gap-1">
                               {/* Edit button */}
                               <Button
                                 variant="ghost"
@@ -523,7 +522,7 @@ function DashboardInner() {
                                 }
                               >
                                 {updatePost.isPending &&
-                                updatePost.variables?.id === post.id ? (
+                                  updatePost.variables?.id === post.id ? (
                                   <Loader2 className="h-4 w-4 animate-spin" />
                                 ) : (
                                   <Edit className="h-4 w-4" />
@@ -546,7 +545,7 @@ function DashboardInner() {
                                 }
                               >
                                 {deletePost.isPending &&
-                                deletePost.variables?.id === post.id ? (
+                                  deletePost.variables?.id === post.id ? (
                                   <Loader2 className="h-4 w-4 animate-spin" />
                                 ) : (
                                   <Trash2 className="h-4 w-4" />
@@ -623,14 +622,13 @@ function DashboardInner() {
                     {categories.map((category) => (
                       <Card
                         key={category.id}
-                        className="relative group hover:shadow-md transition-shadow"
-                      >
+                        className="relative hover:shadow-md transition-shadow">                      
                         <CardContent className="p-4">
                           <div className="flex justify-between items-start mb-2">
                             <h3 className="font-semibold text-lg pr-8">
                               {category.name}
                             </h3>
-                            <div className="flex gap-1 opacity-0 group-hover:opacity-100 transition-opacity">
+                            <div className="flex gap-1">
                               <Button
                                 variant="ghost"
                                 size="sm"
@@ -638,11 +636,11 @@ function DashboardInner() {
                                 disabled={
                                   updateCategory.isPending &&
                                   updateCategory.variables?.id ===
-                                    category.id
+                                  category.id
                                 }
                               >
                                 {updateCategory.isPending &&
-                                updateCategory.variables?.id ===
+                                  updateCategory.variables?.id ===
                                   category.id ? (
                                   <Loader2 className="h-4 w-4 animate-spin" />
                                 ) : (
@@ -658,11 +656,11 @@ function DashboardInner() {
                                 disabled={
                                   deleteCategory.isPending &&
                                   deleteCategory.variables?.id ===
-                                    category.id
+                                  category.id
                                 }
                               >
                                 {deleteCategory.isPending &&
-                                deleteCategory.variables?.id ===
+                                  deleteCategory.variables?.id ===
                                   category.id ? (
                                   <Loader2 className="h-4 w-4 animate-spin" />
                                 ) : (
@@ -759,7 +757,7 @@ function DashboardInner() {
           open={!!editingCategory}
           onOpenChange={() => setEditingCategory(null)}
         >
-          <DialogContent>
+          <DialogContent className="max-w-2xl max-h-[90vh] overflow-y-auto">
             <DialogHeader>
               <DialogTitle>Edit Category</DialogTitle>
               <DialogDescription>
@@ -882,13 +880,12 @@ function DashboardInner() {
           open={!!editingPost}
           onOpenChange={() => setEditingPost(null)}
         >
-          <DialogContent className="max-w-2xl">
-            <DialogHeader>
-              <DialogTitle>Edit Post</DialogTitle>
-              <DialogDescription>
-                Update title, slug, content, and categories.
-              </DialogDescription>
-            </DialogHeader>
+          <DialogContent className="max-w-2xl max-h-[90vh] overflow-y-auto">            <DialogHeader>
+            <DialogTitle>Edit Post</DialogTitle>
+            <DialogDescription>
+              Update title, slug, content, and categories.
+            </DialogDescription>
+          </DialogHeader>
 
             {editingPost && (
               <div className="space-y-4 py-4">
@@ -975,8 +972,8 @@ function DashboardInner() {
                                 ...prev,
                                 categoryIds: exists
                                   ? prev.categoryIds.filter(
-                                      (id) => id !== cat.id,
-                                    )
+                                    (id) => id !== cat.id,
+                                  )
                                   : [...prev.categoryIds, cat.id],
                               };
                             });

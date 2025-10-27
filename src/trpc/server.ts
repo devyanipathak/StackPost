@@ -6,6 +6,8 @@ import { db } from "@/src/db";
 const createRSCContext = () => {
   return {
     db,
+    // minimal Request object just to satisfy the type
+    req: new Request("http://internal.local"),
   };
 };
 

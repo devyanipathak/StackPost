@@ -1,4 +1,4 @@
-# 📰 Full-Stack Blog Platform
+# 📰 Full-Stack Blog Platform: StackPost
 
 **Live on Vercel →**  
 **Public Blog:** https://blog-app-nsg8-gnjvyygwd-devyanis-projects-5ccb0326.vercel.app  
